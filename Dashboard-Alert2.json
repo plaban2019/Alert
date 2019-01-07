@@ -1,0 +1,1986 @@
+{
+	"info": {
+		"_postman_id": "2f931b7d-ec3f-4cca-9401-9e695e3f2fff",
+		"name": "Dashboard-Alert Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94e7a37c-37d1-457a-8711-0881b16d0e9c",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(pm.request.headers, true);",
+							"pm.test(pm.request.body, true);",
+							"pm.environment.set('session_id', pm.cookies.get('sessionId'))",
+							"pm.test(\"respose body\" + (pm.responseBody), function(){",
+							"    ",
+							"} );",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cGxhYmFuOm5XUzNIKVpu",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "richa@hansel.io",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_email",
+							"value": "plaban.dwivedy@hansel.io",
+							"type": "text"
+						},
+						{
+							"key": "company_password",
+							"value": "testio",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/login",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list?env=production",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35357b36-20a8-45f8-add7-7bc97f6c19ab",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTc0MzEsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzJ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/dataconfig/module/list?env=production",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"dataconfig",
+						"module",
+						"list"
+					],
+					"query": [
+						{
+							"key": "env",
+							"value": "production"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getuseractions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d377723-984d-4937-9304-df528641337c",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTc0MzEsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzJ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getuseractions",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getuseractions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getusercompanies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "df21938e-e637-4fb5-a4d0-b1dcf354c8e4",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTc0MzEsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzJ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getusercompanies",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getusercompanies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getdevicegroupsdetail?app_id=02RHUH9LUFFA4PN1POKP50G6A",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c47f1d0-f6b8-4767-aa2f-7c25ecb58b5f",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTAyMDcsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDYsInNlcXVlbmNlTnVtYmVyIjozNzF9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getdevicegroupsdetail?app_id=02RHUH9LUFFA4PN1POKP50G6A",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getdevicegroupsdetail"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "02RHUH9LUFFA4PN1POKP50G6A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getusercompanies?apps=true",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8be1c70d-a4e2-4cdd-8053-1af15e1b522c",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTAyMDcsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDYsInNlcXVlbmNlTnVtYmVyIjozNzF9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getusercompanies?apps=true",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getusercompanies"
+					],
+					"query": [
+						{
+							"key": "apps",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getuserinfo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b1302853-995c-49ef-a1a8-c14da878d889",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/data-sources"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk4OTAyMDcsImV2ZW50SWQiOjMyNSwiaWRlbnRpZnlJZCI6NDYsInNlcXVlbmNlTnVtYmVyIjozNzF9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getuserinfo",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getuserinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getdevicegrouplist?app_id=TKRCR079B6NX266S9DH9GTTNN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c791dca0-7e19-47c0-a442-7c8c3ef1686b",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/app/TKRCR079B6NX266S9DH9GTTNN/code-manager"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk5MDI4MzksImV2ZW50SWQiOjMyNiwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzN9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getdevicegrouplist?app_id=TKRCR079B6NX266S9DH9GTTNN",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getdevicegrouplist"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "TKRCR079B6NX266S9DH9GTTNN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getappversions?app_id=TKRCR079B6NX266S9DH9GTTNN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "248a199d-d44c-4a31-8998-a74882dc66b5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/app/TKRCR079B6NX266S9DH9GTTNN/7.0.8.6/code-manager"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk5MDI4MzksImV2ZW50SWQiOjMyNiwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzN9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/getappversions?app_id=TKRCR079B6NX266S9DH9GTTNN",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"getappversions"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "TKRCR079B6NX266S9DH9GTTNN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a7435934-cc5f-4437-9784-6009c56f79b3",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "patch-type",
+						"value": "code"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "app-id",
+						"value": "TKRCR079B6NX266S9DH9GTTNN"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/app/TKRCR079B6NX266S9DH9GTTNN/7.0.8.2.app/code-manager"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk5MDI4MzksImV2ZW50SWQiOjMyNiwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzN9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "app-version",
+						"value": "7.0.8.2.app"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/patchlist/query/0",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"patchlist",
+						"query",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changestate(enable/disable)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d4ffca0-3567-4f4e-92f2-764442947d3b",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "https://dashboard.hansel.io"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "patch-type",
+						"value": "code"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/app/TKRCR079B6NX266S9DH9GTTNN/7.0.8.2.app/code-manager/change/gqbwCr3dwVCq7zQatuUQPw=="
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NTk5MDI4MzksImV2ZW50SWQiOjMyNiwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzN9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"state\":\"disabled\"}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/patchlist/gqbwCr3dwVCq7zQatuUQPw==/changestate",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"patchlist",
+						"gqbwCr3dwVCq7zQatuUQPw==",
+						"changestate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changestate(make-live)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78aca063-8a5f-4ec2-bbee-6839a463a5f7",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "https://dashboard.hansel.io"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "patch-type",
+						"value": "code"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/app/TKRCR079B6NX266S9DH9GTTNN/7.0.8.2.app/code-manager/change/gqbwCr3dwVCq7zQatuUQPw=="
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA0MjMzMjUsImV2ZW50SWQiOjMyNywiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzR9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"state\":\"enabled\"}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/patchlist/gqbwCr3dwVCq7zQatuUQPw==/changestate",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"patchlist",
+						"gqbwCr3dwVCq7zQatuUQPw==",
+						"changestate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprehensivelist?env=production",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48254646-fcc4-4eb1-91c6-15f041fee9e3",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA0MjMzMjUsImV2ZW50SWQiOjMyNywiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzR9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/dataconfig/module/comprehensivelist?env=production",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"dataconfig",
+						"module",
+						"comprehensivelist"
+					],
+					"query": [
+						{
+							"key": "env",
+							"value": "production"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "details(feature)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3d01fb6-8c91-491c-b24d-ce6ffaf4942d",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/feature/5b4dc253cf29911b6f6770f8"
+					},
+					{
+						"key": "experience-type",
+						"value": "feature"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA1MDIwNTQsImV2ZW50SWQiOjMyOSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzZ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/5b4dc253cf29911b6f6770f8/details",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"5b4dc253cf29911b6f6770f8",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getcriteriafields?app_id=TKRCR079B6NX266S9DH9GTTNN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd6f0c2c-a57d-42b0-b22f-21ccc6cbf4f2",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/feature/5b4dc253cf29911b6f6770f8"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA1NDgwODgsImV2ZW50SWQiOjMzMCwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzd9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/patchlist/getcriteriafields?app_id=TKRCR079B6NX266S9DH9GTTNN",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"patchlist",
+						"getcriteriafields"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "TKRCR079B6NX266S9DH9GTTNN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "details(experiment)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "53e49461-a04c-47f3-b953-1e8cb28b7847",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/summary"
+					},
+					{
+						"key": "experience-type",
+						"value": "experiment"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA2MzYzNjEsImV2ZW50SWQiOjMzMiwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozNzl9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/5b60289d2c0f281753d1310f/details",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"5b60289d2c0f281753d1310f",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aggquery?app_id=TKRCR079B6NX266S9DH9GTTNN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2afec3c0-8736-4d0c-bf51-b450fb8c2a3f",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/results"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA2NTk2MDQsImV2ZW50SWQiOjMzMywiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozODB9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/5b60289d2c0f281753d1310f/aggquery?app_id=TKRCR079B6NX266S9DH9GTTNN",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"5b60289d2c0f281753d1310f",
+						"aggquery"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "TKRCR079B6NX266S9DH9GTTNN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allappsdevicecount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7fd01c12-529b-4114-98d4-d9f53a690603",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/results"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA2NTk2MDQsImV2ZW50SWQiOjMzMywiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozODB9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/5b60289d2c0f281753d1310f/allappsdevicecount",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"5b60289d2c0f281753d1310f",
+						"allappsdevicecount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "totalcount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f9ca600-d471-46c1-8428-fc8e238d6e0b",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "https://dashboard.hansel.io"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/results"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA2NTk2MDQsImV2ZW50SWQiOjMzMywiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozODB9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"app_id\":\"TKRCR079B6NX266S9DH9GTTNN\",\"app_version\":\"all\",\"experiment_id\":\"5b60289d2c0f281753d1310f\"}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/events/totalcount",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"events",
+						"totalcount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1fa5372-7584-4993-bbd3-3f9bf79c1c9b",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "https://dashboard.hansel.io"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/results"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA3Mjg4MzQsImV2ZW50SWQiOjMzNSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozODJ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"app_id\":\"TKRCR079B6NX266S9DH9GTTNN\",\"app_version\":\"all\",\"event_id\":\"5b236c8f9519b45c3667ed85\",\"experiment_id\":\"5b60289d2c0f281753d1310f\",\"step\":\"hour\",\"start\":1545577200897,\"stop\":1545663600897,\"variant_list\":[\"0\",\"0_0\",\"1\",\"0_1\",\"2\",\"0_2\"]}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/events/query",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"events",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contextualproperty?app_id=TKRCR079B6NX266S9DH9GTTNN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8eba5cb4-e24a-49dc-bed2-be40cc0f4848",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/experiment/5b60289d2c0f281753d1310f/results"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E172E1F872CF9D54F02B864B3A12B21FDC1B70931AFF7FF96DCD928EFC57DF7A81DC7F709A6687B427FF6D3C1FF64F060CDA88E2663C77D36992E90096FD8BC104; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiI4NTMiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE1NDU2NTk3ODQwMTUsImxhc3RFdmVudFRpbWUiOjE1NDU2NjA3Mjg4MzQsImV2ZW50SWQiOjMzNSwiaWRlbnRpZnlJZCI6NDcsInNlcXVlbmNlTnVtYmVyIjozODJ9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/contextualproperty?app_id=TKRCR079B6NX266S9DH9GTTNN",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"contextualproperty"
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "TKRCR079B6NX266S9DH9GTTNN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bfa4e929-b078-4c60-853d-030ceab2c215",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"   ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Origin",
+						"value": "https://dashboard.hansel.io"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "https://dashboard.hansel.io/experience-config/feature/5bfe5f61b640a57d2ac403a1"
+					},
+					{
+						"key": "Cookie",
+						"value": "amplitude_id_122e675cf4df83d2c6a5381c86188b7fhansel.io=eyJkZXZpY2VJZCI6IjZkM2U2NTg1LTMzNWYtNGQxMi04ZTdjLWYyNWM5MWNjNjQxYlIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1Mjg2MDM5ODg2LCJsYXN0RXZlbnRUaW1lIjoxNTQ1Mjg3NTE2MzI3LCJldmVudElkIjo2NywiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjcyfQ==; sessionid={{session_id}}; AWSELB=DFD99D23040F5EFBC22D43A12113AE72DE9C4986E15AAEA771D957EE704B3E193B0DEBCD7B0D3E53D7FFA3DA239F849BB31ACE870DEDA96D1133BF58AC794F7F4369CFA5576ABD92854DE9DC87F7FE5CC870EBD360; amplitude_id_f008d89e56a67ae7cdd3b47747d756aahansel.io=eyJkZXZpY2VJZCI6IjIzYjNiNjRmLWY1NjctNDVkMS1hNWUyLWEzOWY3NTUyMmE5ZVIiLCJ1c2VySWQiOiIyIiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNTQ1NzQzOTg4NzU4LCJsYXN0RXZlbnRUaW1lIjoxNTQ1NzQzOTkzNTcxLCJldmVudElkIjozNDMsImlkZW50aWZ5SWQiOjUxLCJzZXF1ZW5jZU51bWJlciI6Mzk0fQ=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"app_ids\":[\"C6IDXD056LGCE6JKDREV12IF7\"],\"ids\":[\"5afd9863ae3c13738971fbed\"]}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/dataconfig/keydatapair/list",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"dataconfig",
+						"keydatapair",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initSDK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c130c4e-3d2c-4817-b73f-b3abdf058d05",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"filters\":[{\"id\":\"device\",\"value\":\"Android SDK built for x86\",\"type\":\"string\"},{\"id\":\"os_version\",\"value\":\"7.1.1\",\"type\":\"string\"},{\"id\":\"app_version\",\"value\":\"7.0.8.6\",\"type\":\"string\"},{\"id\":\"manufacturer\",\"value\":\"Google\",\"type\":\"string\"},{\"id\":\"location\",\"value\":\"bangalore\",\"type\":\"string\"}],\"batch\":[{\"manual_sync\":false,\"event_time\":1545638888900,\"patches_applied\":{}}],\"patch_list_version\":\"\",\"is_push_initiated\":false,\"is_filter_updated\":true,\"app_id\":\"TKRCR079B6NX266S9DH9GTTNN\",\"app_version\":\"7.0.8.6\",\"app_build_number\":\"70806\",\"device_id\":\"cac04459dcff5e57\",\"sdk_version\":\"7.0.8\",\"os\":\"android\",\"tz_offset\":19800000,\"time\":\"1545638888902\"}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/initializesdk?q=f2a94cb9a6044322071ab3ec122d0f311a8e01d2",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"initializesdk"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "f2a94cb9a6044322071ab3ec122d0f311a8e01d2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8e3a826-33f5-4562-a404-33872e57eb6b",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"successful message\", function(){",
+							"   pm.expect(jsonData.is_error).to.eql(false); ",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"device_details\":{\"filters\":[{\"id\":\"device\",\"value\":\"Android SDK built for x86\",\"type\":\"string\"},{\"id\":\"app_version\",\"value\":\"7.0.8.6\",\"type\":\"string\"},{\"id\":\"os_version\",\"value\":\"7.1.1\",\"type\":\"string\"},{\"id\":\"manufacturer\",\"value\":\"Google\",\"type\":\"string\"},{\"id\":\"location\",\"value\":\"bangalore\",\"type\":\"string\"}],\"app_id\":\"TKRCR079B6NX266S9DH9GTTNN\",\"app_version\":\"7.0.8.6\",\"app_build_number\":\"70806\",\"device_id\":\"cac04459dcff5e57\",\"sdk_version\":\"7.0.8\",\"os\":\"android\",\"os_version\":\"7.1.1\",\"device\":\"Android SDK built for x86\",\"manufacturer\":\"Google\",\"tz_offset\":19800000,\"time\":\"1545638891259\",\"is_filter_updated\":true,\"in_tg\":true,\"is_push_initiated\":false},\"experience_details\":{\"experience\":{\"experience_list_version\":\"206527ff7c22db58d90aaad5f8469dc3\"},\"deep_config\":{\"deep_config_list_version\":\"\"}}}"
+				},
+				"url": {
+					"raw": "https://dashboard.hansel.io/dashboard/experience/v1/getdata?q=d8aa50ef27280f09274ac18c412a111286833b49",
+					"protocol": "https",
+					"host": [
+						"dashboard",
+						"hansel",
+						"io"
+					],
+					"path": [
+						"dashboard",
+						"experience",
+						"v1",
+						"getdata"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "d8aa50ef27280f09274ac18c412a111286833b49"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
